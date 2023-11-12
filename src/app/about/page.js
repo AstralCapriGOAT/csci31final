@@ -3,7 +3,10 @@ export default function About() {
   return (
     <div>
       <Navbar />
-      <p>About</p>
+      <div className="m-12">
+        <PageTitle title="About" />
+        <PageContent />
+      </div>
     </div>
   )
 }

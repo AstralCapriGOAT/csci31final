@@ -1,8 +1,10 @@
 import Navbar from './components/Navbar'
 import { createClient } from '@supabase/supabase-js'
+import PageTitle from './components/PageTitle'
 
 // Create a single supabase client for interacting with your database
-const supabase = createClient('https://vaqdcjrivplagaprhqbr.supabase.co', process.env.SUPABASE_SECRET)
+const supabase = createClient('https://vaqdcjrivplagaprhqbr.supabase.co', process.env.SUPABASE_SERVICE_ROLE_KEY)
+console.log({ SUPABASE_SERVICE_ROLE_KEY })
 
 export const revalidate = 15
 export default async function Home() {
@@ -10,6 +12,7 @@ export default async function Home() {
 
   console.log('cards: ', cards)
 
+  // define pagetitle, pagecontent and check other vercel errors.
   return (
     <div>
       <Navbar />
@@ -17,8 +20,8 @@ export default async function Home() {
         <PageTitle title="Home" />
         <PageContent />
         <div className="flex gap-6 w-full my-6 flex-wrap">
-          {cards.map((card) => (
-            <Card title={card.title} subtitle={card.subtitle} description={card.description} />
+          {cards.map((card, idx) => (
+            <Card key={idx} title={card.title} subtitle={card.subtitle} description={card.description} />
           ))}
         </div>
       </div>
