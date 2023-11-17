@@ -1,9 +1,15 @@
 import Navbar from '../components/Navbar'
-export default function About() {
+import PageTitle from '../components/PageTitle'
+import PageContent from '../components/PageContent'
+
+export default function Menu4() {
   return (
     <div>
       <Navbar />
-      <p>About</p>
+      <div className="m-12">
+        <PageTitle title="Menu4" />
+        <PageContent />
+      </div>
     </div>
   )
 }
