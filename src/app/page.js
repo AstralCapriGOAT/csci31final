@@ -3,15 +3,13 @@ import { createClient } from '@supabase/supabase-js'
 import PageTitle from './components/PageTitle'
 import PageContent from './components/PageContent'
 import Card from './components/Card'
-import Footer from './components/footer'
-
-// Create a single supabase client for interacting with your database
-const supabase = createClient('https://vaqdcjrivplagaprhqbr.supabase.co', process.env.SUPABASE_SERVICE_ROLE_KEY)
- // console.log({ SUPABASE_SERVICE_ROLE_KEY })
+import Footer from './components/Footer'
+import { findCards } from './utils/supabase-client'
 
 export const revalidate = 15
 export default async function Home() {
-  let { data: cards, error } = await supabase.from('cards').select('id')
+  // let { data: cards, error } = await supabase.from('cards').select('id') OLD
+  const cards = await findCards()
 
   console.log('cards: ', cards)
 
