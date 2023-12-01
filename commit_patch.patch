@@ -1,0 +1,333 @@
+diff --git a/next.config.js b/next.config.js
+index 767719f..950e2f4 100644
+--- a/next.config.js
++++ b/next.config.js
+@@ -1,4 +1,8 @@
+ /** @type {import('next').NextConfig} */
+-const nextConfig = {}
++const nextConfig = {
++  experimental: {
++    serverActions: true,
++  },
++}
+ 
+ module.exports = nextConfig
+diff --git a/package-lock.json b/package-lock.json
+index bc6dfad..9bee804 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -10,14 +10,15 @@
+       "dependencies": {
+         "@heroicons/react": "^2.0.18",
+         "@supabase/supabase-js": "^2.38.4",
+-        "next": "14.0.0",
++        "@vercel/analytics": "^1.1.1",
++        "next": "13.5.6",
+         "react": "^18",
+         "react-dom": "^18"
+       },
+       "devDependencies": {
+         "autoprefixer": "^10",
+         "eslint": "^8",
+-        "eslint-config-next": "14.0.0",
++        "eslint-config-next": "13.5.6",
+         "postcss": "^8",
+         "prettier": "3.0.3",
+         "tailwindcss": "^3"
+@@ -202,23 +203,23 @@
+       }
+     },
+     "node_modules/@next/env": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/env/-/env-14.0.0.tgz",
+-      "integrity": "sha512-cIKhxkfVELB6hFjYsbtEeTus2mwrTC+JissfZYM0n+8Fv+g8ucUfOlm3VEDtwtwydZ0Nuauv3bl0qF82nnCAqA=="
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/env/-/env-13.5.6.tgz",
++      "integrity": "sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw=="
+     },
+     "node_modules/@next/eslint-plugin-next": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-14.0.0.tgz",
+-      "integrity": "sha512-Ye37nNI09V3yt7pzuzSQtwlvuJ2CGzFszHXkcTHHZgNr7EhTMFLipn3VSJChy+e5+ahTdNApPphc3qCPUsn10A==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/eslint-plugin-next/-/eslint-plugin-next-13.5.6.tgz",
++      "integrity": "sha512-ng7pU/DDsxPgT6ZPvuprxrkeew3XaRf4LAT4FabaEO/hAbvVx4P7wqnqdbTdDn1kgTvsI4tpIgT4Awn/m0bGbg==",
+       "dev": true,
+       "dependencies": {
+         "glob": "7.1.7"
+       }
+     },
+     "node_modules/@next/swc-darwin-arm64": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-14.0.0.tgz",
+-      "integrity": "sha512-HQKi159jCz4SRsPesVCiNN6tPSAFUkOuSkpJsqYTIlbHLKr1mD6be/J0TvWV6fwJekj81bZV9V/Tgx3C2HO9lA==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.5.6.tgz",
++      "integrity": "sha512-5nvXMzKtZfvcu4BhtV0KH1oGv4XEW+B+jOfmBdpFI3C7FrB/MfujRpWYSBBO64+qbW8pkZiSyQv9eiwnn5VIQA==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -231,9 +232,9 @@
+       }
+     },
+     "node_modules/@next/swc-darwin-x64": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-14.0.0.tgz",
+-      "integrity": "sha512-4YyQLMSaCgX/kgC1jjF3s3xSoBnwHuDhnF6WA1DWNEYRsbOOPWjcYhv8TKhRe2ApdOam+VfQSffC4ZD+X4u1Cg==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-13.5.6.tgz",
++      "integrity": "sha512-6cgBfxg98oOCSr4BckWjLLgiVwlL3vlLj8hXg2b+nDgm4bC/qVXXLfpLB9FHdoDu4057hzywbxKvmYGmi7yUzA==",
+       "cpu": [
+         "x64"
+       ],
+@@ -246,9 +247,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-arm64-gnu": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-14.0.0.tgz",
+-      "integrity": "sha512-io7fMkJ28Glj7SH8yvnlD6naIhRDnDxeE55CmpQkj3+uaA2Hko6WGY2pT5SzpQLTnGGnviK85cy8EJ2qsETj/g==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-gnu/-/swc-linux-arm64-gnu-13.5.6.tgz",
++      "integrity": "sha512-txagBbj1e1w47YQjcKgSU4rRVQ7uF29YpnlHV5xuVUsgCUf2FmyfJ3CPjZUvpIeXCJAoMCFAoGnbtX86BK7+sg==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -261,9 +262,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-arm64-musl": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-14.0.0.tgz",
+-      "integrity": "sha512-nC2h0l1Jt8LEzyQeSs/BKpXAMe0mnHIMykYALWaeddTqCv5UEN8nGO3BG8JAqW/Y8iutqJsaMe2A9itS0d/r8w==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-arm64-musl/-/swc-linux-arm64-musl-13.5.6.tgz",
++      "integrity": "sha512-cGd+H8amifT86ZldVJtAKDxUqeFyLWW+v2NlBULnLAdWsiuuN8TuhVBt8ZNpCqcAuoruoSWynvMWixTFcroq+Q==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -276,9 +277,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-x64-gnu": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-14.0.0.tgz",
+-      "integrity": "sha512-Wf+WjXibJQ7hHXOdNOmSMW5bxeJHVf46Pwb3eLSD2L76NrytQlif9NH7JpHuFlYKCQGfKfgSYYre5rIfmnSwQw==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-13.5.6.tgz",
++      "integrity": "sha512-Mc2b4xiIWKXIhBy2NBTwOxGD3nHLmq4keFk+d4/WL5fMsB8XdJRdtUlL87SqVCTSaf1BRuQQf1HvXZcy+rq3Nw==",
+       "cpu": [
+         "x64"
+       ],
+@@ -291,9 +292,9 @@
+       }
+     },
+     "node_modules/@next/swc-linux-x64-musl": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.0.0.tgz",
+-      "integrity": "sha512-WTZb2G7B+CTsdigcJVkRxfcAIQj7Lf0ipPNRJ3vlSadU8f0CFGv/ST+sJwF5eSwIe6dxKoX0DG6OljDBaad+rg==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-13.5.6.tgz",
++      "integrity": "sha512-CFHvP9Qz98NruJiUnCe61O6GveKKHpJLloXbDSWRhqhkJdZD2zU5hG+gtVJR//tyW897izuHpM6Gtf6+sNgJPQ==",
+       "cpu": [
+         "x64"
+       ],
+@@ -306,9 +307,9 @@
+       }
+     },
+     "node_modules/@next/swc-win32-arm64-msvc": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-14.0.0.tgz",
+-      "integrity": "sha512-7R8/x6oQODmNpnWVW00rlWX90sIlwluJwcvMT6GXNIBOvEf01t3fBg0AGURNKdTJg2xNuP7TyLchCL7Lh2DTiw==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-win32-arm64-msvc/-/swc-win32-arm64-msvc-13.5.6.tgz",
++      "integrity": "sha512-aFv1ejfkbS7PUa1qVPwzDHjQWQtknzAZWGTKYIAaS4NMtBlk3VyA6AYn593pqNanlicewqyl2jUhQAaFV/qXsg==",
+       "cpu": [
+         "arm64"
+       ],
+@@ -321,9 +322,9 @@
+       }
+     },
+     "node_modules/@next/swc-win32-ia32-msvc": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-14.0.0.tgz",
+-      "integrity": "sha512-RLK1nELvhCnxaWPF07jGU4x3tjbyx2319q43loZELqF0+iJtKutZ+Lk8SVmf/KiJkYBc7Cragadz7hb3uQvz4g==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-13.5.6.tgz",
++      "integrity": "sha512-XqqpHgEIlBHvzwG8sp/JXMFkLAfGLqkbVsyN+/Ih1mR8INb6YCc2x/Mbwi6hsAgUnqQztz8cvEbHJUbSl7RHDg==",
+       "cpu": [
+         "ia32"
+       ],
+@@ -336,9 +337,9 @@
+       }
+     },
+     "node_modules/@next/swc-win32-x64-msvc": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.0.tgz",
+-      "integrity": "sha512-g6hLf1SUko+hnnaywQQZzzb3BRecQsoKkF3o/C+F+dOA4w/noVAJngUVkfwF0+2/8FzNznM7ofM6TGZO9svn7w==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.5.6.tgz",
++      "integrity": "sha512-Cqfe1YmOS7k+5mGu92nl5ULkzpKuxJrP3+4AEuPmrpFZ3BHxTY3TnHmU1On3bFmFFs6FbTcdF58CCUProGpIGQ==",
+       "cpu": [
+         "x64"
+       ],
+@@ -601,6 +602,14 @@
+       "integrity": "sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==",
+       "dev": true
+     },
++    "node_modules/@vercel/analytics": {
++      "version": "1.1.1",
++      "resolved": "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.1.1.tgz",
++      "integrity": "sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==",
++      "dependencies": {
++        "server-only": "^0.0.1"
++      }
++    },
+     "node_modules/acorn": {
+       "version": "8.11.2",
+       "resolved": "https://registry.npmjs.org/acorn/-/acorn-8.11.2.tgz",
+@@ -1540,12 +1549,12 @@
+       }
+     },
+     "node_modules/eslint-config-next": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-14.0.0.tgz",
+-      "integrity": "sha512-jtXeE+/pGQ3h9n11QyyuPN50kO13GO5XvjU5ZRq6W+XTpOMjyobWmK2s7aowy0FtzA49krJzYzEU9s1RMwoJ6g==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-13.5.6.tgz",
++      "integrity": "sha512-o8pQsUHTo9aHqJ2YiZDym5gQAMRf7O2HndHo/JZeY7TDD+W4hk6Ma8Vw54RHiBeb7OWWO5dPirQB+Is/aVQ7Kg==",
+       "dev": true,
+       "dependencies": {
+-        "@next/eslint-plugin-next": "14.0.0",
++        "@next/eslint-plugin-next": "13.5.6",
+         "@rushstack/eslint-patch": "^1.3.3",
+         "@typescript-eslint/parser": "^5.4.2 || ^6.0.0",
+         "eslint-import-resolver-node": "^0.3.6",
+@@ -3023,11 +3032,11 @@
+       "dev": true
+     },
+     "node_modules/next": {
+-      "version": "14.0.0",
+-      "resolved": "https://registry.npmjs.org/next/-/next-14.0.0.tgz",
+-      "integrity": "sha512-J0jHKBJpB9zd4+c153sair0sz44mbaCHxggs8ryVXSFBuBqJ8XdE9/ozoV85xGh2VnSjahwntBZZgsihL9QznA==",
++      "version": "13.5.6",
++      "resolved": "https://registry.npmjs.org/next/-/next-13.5.6.tgz",
++      "integrity": "sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==",
+       "dependencies": {
+-        "@next/env": "14.0.0",
++        "@next/env": "13.5.6",
+         "@swc/helpers": "0.5.2",
+         "busboy": "1.6.0",
+         "caniuse-lite": "^1.0.30001406",
+@@ -3039,18 +3048,18 @@
+         "next": "dist/bin/next"
+       },
+       "engines": {
+-        "node": ">=18.17.0"
++        "node": ">=16.14.0"
+       },
+       "optionalDependencies": {
+-        "@next/swc-darwin-arm64": "14.0.0",
+-        "@next/swc-darwin-x64": "14.0.0",
+-        "@next/swc-linux-arm64-gnu": "14.0.0",
+-        "@next/swc-linux-arm64-musl": "14.0.0",
+-        "@next/swc-linux-x64-gnu": "14.0.0",
+-        "@next/swc-linux-x64-musl": "14.0.0",
+-        "@next/swc-win32-arm64-msvc": "14.0.0",
+-        "@next/swc-win32-ia32-msvc": "14.0.0",
+-        "@next/swc-win32-x64-msvc": "14.0.0"
++        "@next/swc-darwin-arm64": "13.5.6",
++        "@next/swc-darwin-x64": "13.5.6",
++        "@next/swc-linux-arm64-gnu": "13.5.6",
++        "@next/swc-linux-arm64-musl": "13.5.6",
++        "@next/swc-linux-x64-gnu": "13.5.6",
++        "@next/swc-linux-x64-musl": "13.5.6",
++        "@next/swc-win32-arm64-msvc": "13.5.6",
++        "@next/swc-win32-ia32-msvc": "13.5.6",
++        "@next/swc-win32-x64-msvc": "13.5.6"
+       },
+       "peerDependencies": {
+         "@opentelemetry/api": "^1.1.0",
+@@ -3803,6 +3812,11 @@
+         "node": ">=10"
+       }
+     },
++    "node_modules/server-only": {
++      "version": "0.0.1",
++      "resolved": "https://registry.npmjs.org/server-only/-/server-only-0.0.1.tgz",
++      "integrity": "sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA=="
++    },
+     "node_modules/set-function-length": {
+       "version": "1.1.1",
+       "resolved": "https://registry.npmjs.org/set-function-length/-/set-function-length-1.1.1.tgz",
+diff --git a/package.json b/package.json
+index ceb7ef5..bb504ea 100644
+--- a/package.json
++++ b/package.json
+@@ -11,14 +11,15 @@
+   "dependencies": {
+     "@heroicons/react": "^2.0.18",
+     "@supabase/supabase-js": "^2.38.4",
+-    "next": "14.0.0",
++    "@vercel/analytics": "^1.1.1",
++    "next": "13.5.6",
+     "react": "^18",
+     "react-dom": "^18"
+   },
+   "devDependencies": {
+     "autoprefixer": "^10",
+     "eslint": "^8",
+-    "eslint-config-next": "14.0.0",
++    "eslint-config-next": "13.5.6",
+     "postcss": "^8",
+     "prettier": "3.0.3",
+     "tailwindcss": "^3"
+diff --git a/src/app/about/page.js b/src/app/about/page.js
+index 0ab1d20..27aadb1 100644
+--- a/src/app/about/page.js
++++ b/src/app/about/page.js
+@@ -1,4 +1,6 @@
+ import Navbar from '../components/Navbar'
++import PageTitle from '../components/PageTitle'
++import PageContent from '../components/PageContent'
+ export default function About() {
+   return (
+     <div>
+diff --git a/src/app/components/Navbar.js b/src/app/components/Navbar.js
+index dc5a94e..8034c00 100644
+--- a/src/app/components/Navbar.js
++++ b/src/app/components/Navbar.js
+@@ -1,5 +1,5 @@
+ import Image from 'next/image'
+-import { BugantIcon } from '@heroicons/react/24/solid'
++import { BugAntIcon } from '@heroicons/react/24/solid'
+ 
+ const menuItems = [
+   {
+@@ -27,7 +27,7 @@ const menuItems = [
+ export default function Navbar() {
+   return (
+     <div className="flex justify-between gap-4 m-6">
+-      <BugantIcon className="h-15 w-15 text-purple-400" />
++      <BugAntIcon className="h-16 w-16 text-purple-400" />
+       <div className="flex justify-end gap-4 m-6">
+         {menuItems.map((item, index) => (
+           <a
+@@ -41,4 +41,4 @@ export default function Navbar() {
+       </div>
+     </div>
+   )
+-} 
++}
+diff --git a/src/app/utils/supabase-client.js b/src/app/utils/supabase-client.js
+index 8851162..939f61f 100644
+--- a/src/app/utils/supabase-client.js
++++ b/src/app/utils/supabase-client.js
+@@ -19,6 +19,6 @@ export async function insertCard(card) {
+ export async function findCards() {
+   const supabase = getClient()
+   const { data: cards, error } = await supabase.from('cards').select()
+-  return cards
++  return cards || []
+   // implements https://supabase.com/docs/reference/javascript/select
+ }

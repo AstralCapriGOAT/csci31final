@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { BugantIcon } from '@heroicons/react/24/solid'
+import { BugAntIcon } from '@heroicons/react/24/solid'
 
 const menuItems = [
   {
@@ -27,7 +27,7 @@ const menuItems = [
 export default function Navbar() {
   return (
     <div className="flex justify-between gap-4 m-6">
-      <BugantIcon className="h-15 w-15 text-purple-400" />
+      <BugAntIcon className="h-16 w-16 text-purple-400" />
       <div className="flex justify-end gap-4 m-6">
         {menuItems.map((item, index) => (
           <a
@@ -41,4 +41,4 @@ export default function Navbar() {
       </div>
     </div>
   )
-} 
+}
