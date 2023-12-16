@@ -18,14 +18,20 @@ export default async function Home() {
     <div>
       <Navbar />
       <div className="m-12">
-        <PageTitle title="Home" />
-        <PageContent />
+        <PageTitle title="Spaceport" />
+        <PageContent defaultContent="this is default content" /> {/* defaults not passing */}
+        <h1>what happens here?</h1>
+        <div classname="text-white">
+          <p>This is a failed landing page for Star Wars Geography.</p>
+          <p>You can explore the incomplete menus if you like . . .</p>
+        </div>
         <div className="flex gap-6 w-full my-6 flex-wrap">
           {cards.map((card, idx) => (
             <Card key={idx} title={card.title} subtitle={card.subtitle} description={card.description} />
           ))}
+          <Card />
         </div>
-        <div className="m-9 w-full">
+        <div className="w-full">
           <Footer />
         </div>
       </div>
